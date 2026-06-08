@@ -2,6 +2,7 @@ import "dotenv/config.js";
 import express, { response } from "express";
 import {
   makeCreateLogController,
+  makeGetAllLogsController,
   makeGetLogByDeliveryIdController,
 } from "./src/factories/index.js";
 
@@ -14,6 +15,14 @@ app.get("/api/logs/:logId", async (request, response) => {
 
   const { statusCode, body } =
     await getLogByDeliveryIdController.execute(request);
+
+  response.status(statusCode).send(body);
+});
+
+app.get("/api/logs", async (request, response) => {
+  const controller = makeGetAllLogsController();
+
+  const { statusCode, body } = await controller.execute();
 
   response.status(statusCode).send(body);
 });
