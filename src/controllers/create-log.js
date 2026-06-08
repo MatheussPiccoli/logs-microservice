@@ -12,7 +12,7 @@ export class CreateLogController {
 
   async execute(httpRequest) {
     try {
-      const { delivery, email, locker_id, password } = httpRequest.body;
+      const { delivery, email, locker_id, action } = httpRequest.body;
 
       if (!delivery) {
         return badRequest({
@@ -42,7 +42,7 @@ export class CreateLogController {
         delivery,
         email,
         locker_id,
-        password,
+        action,
       });
 
       return created(log);

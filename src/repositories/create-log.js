@@ -9,7 +9,7 @@ export class PostgresCreateLogRepository {
         delivery,
         email,
         locker_id,
-        password
+        action
       )
       VALUES ($1, $2, $3, $4, $5)
       RETURNING *
@@ -19,7 +19,7 @@ export class PostgresCreateLogRepository {
         logData.delivery,
         logData.email,
         logData.locker_id,
-        logData.password,
+        logData.action,
       ],
     );
 

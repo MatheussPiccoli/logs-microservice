@@ -11,7 +11,7 @@ export class CreateLogUseCase {
       delivery: params.delivery,
       email: params.email,
       locker_id: params.locker_id,
-      password: params.password,
+      action: params.action,
     };
 
     return await this.createLogRepository.execute(log);

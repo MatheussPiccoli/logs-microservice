@@ -1,5 +1,6 @@
 import "dotenv/config.js";
 import express, { response } from "express";
+import { makeCreateLogController } from "./src/factories/index.js";
 
 const app = express();
 
