@@ -10,8 +10,11 @@ export const invalidIdResponse = () =>
 
 export const checkIfEmailIsValid = (email) => validator.isEmail(email);
 
-export const residentNotFoundResponse = () =>
+export const logNotFoundResponse = () =>
   notFound({ message: "User not found" });
+
+export const requiredFieldIsMissingResponse = (field) =>
+  badRequest({ message: `The field ${field} is required.` });
 
 export const invalidEmailResponse = () =>
   badRequest({
